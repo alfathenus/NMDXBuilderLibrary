@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MDXBuilderLibrary.mdx.axisitems;
 using MDXBuilderLibrary.mdx.interfaces;
-using MDXBuilderLibrary.mdx.axisitems;
 
 namespace MDXBuilderLibrary.mdx.with
 {
@@ -12,7 +7,7 @@ namespace MDXBuilderLibrary.mdx.with
     /// 
     /// </summary>
     /// <see cref="http://msdn.microsoft.com/en-us/library/ms145487.aspx"/>
-    public class Set :IMDXWithItem
+    public class Set : IMDXWithItem
     {
         private IMDXAxisItem _Set;
         private string _Name;
@@ -32,9 +27,9 @@ namespace MDXBuilderLibrary.mdx.with
                 string retTxt = "SET " + this._Name + " AS ";
                 if (this._Set is SetAxisItem)
                 {
-                    retTxt = txt;
+                    retTxt += txt;
                 }
-                else 
+                else
                 {
                     retTxt = "'" + txt + "'";
                 }
